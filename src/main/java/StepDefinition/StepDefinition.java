@@ -200,6 +200,8 @@ public class StepDefinition {
         DriverAction.click(locator.facebook,"Facebook");
         ArrayList<String> newTb = new ArrayList<>(DriverAction.getWindowHandles());
         DriverAction.switchToWindow(newTb.get(1));
+        DriverAction.waitSec(2);
+        GemTestReporter.addTestStep("Current-Page","Facebook",STATUS.PASS,DriverAction.takeSnapShot());
         String s15 = DriverAction.getCurrentURL();
         if (s15.contains("facebook")) {
             GemTestReporter.addTestStep("Facebook Url Validation", "Successful<br>Expected URL: " + facebook + "<br>Actual URL: " + facebook, STATUS.PASS);
@@ -219,6 +221,8 @@ public class StepDefinition {
         DriverAction.click(locator.twitter,"Twitter");
         ArrayList<String> newTb1 = new ArrayList<>(DriverAction.getWindowHandles());
         DriverAction.switchToWindow(newTb1.get(1));
+        DriverAction.waitSec(2);
+        GemTestReporter.addTestStep("Current-Page","Twitter",STATUS.PASS,DriverAction.takeSnapShot());
         String s16 = DriverAction.getCurrentURL();
         if (s16.contains(twitter)) {
             GemTestReporter.addTestStep("Twitter Url Validation", "Successful<br>Expected URL: " + twitter + "<br>Actual URL: " + twitter, STATUS.PASS);
@@ -237,6 +241,8 @@ public class StepDefinition {
         DriverAction.click(locator.instagram,"Instagram");
         ArrayList<String> newTb2 = new ArrayList<>(DriverAction.getWindowHandles());
         DriverAction.switchToWindow(newTb2.get(1));
+        DriverAction.waitSec(2);
+        GemTestReporter.addTestStep("Current-Page","Instagram",STATUS.PASS,DriverAction.takeSnapShot());
         String s17 = DriverAction.getCurrentURL();
         if (s17.contains(insta)) {
             GemTestReporter.addTestStep("Instagram Url Validation", "Successful<br>Expected URL: " + insta + "<br>Actual URL: " + insta, STATUS.PASS);
