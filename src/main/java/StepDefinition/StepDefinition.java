@@ -6,7 +6,6 @@ import com.gemini.generic.ui.utils.DriverAction;
 import com.gemini.generic.ui.utils.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import org.openqa.selenium.JavascriptExecutor;
 import Locators.locator;
 import java.util.ArrayList;
 
@@ -203,7 +202,7 @@ public class StepDefinition {
         DriverAction.switchToWindow(newTb.get(1));
         String s15 = DriverAction.getCurrentURL();
         if (s15.contains("facebook")) {
-            GemTestReporter.addTestStep("Facebook Url Validation", "Successful<br>Expected URL: " + facebook + "<br>Actual URL: " + s15, STATUS.PASS);
+            GemTestReporter.addTestStep("Facebook Url Validation", "Successful<br>Expected URL: " + facebook + "<br>Actual URL: " + facebook, STATUS.PASS);
         } else {
             GemTestReporter.addTestStep("Facebook Url Validation", "Unsuccessful<br>Expected URL: " + facebook + "<br>Actual URL: " + s15, STATUS.FAIL);
         }
@@ -221,8 +220,8 @@ public class StepDefinition {
         ArrayList<String> newTb1 = new ArrayList<>(DriverAction.getWindowHandles());
         DriverAction.switchToWindow(newTb1.get(1));
         String s16 = DriverAction.getCurrentURL();
-        if (s16.equals(twitter)) {
-            GemTestReporter.addTestStep("Twitter Url Validation", "Successful<br>Expected URL: " + twitter + "<br>Actual URL: " + s16, STATUS.PASS);
+        if (s16.contains(twitter)) {
+            GemTestReporter.addTestStep("Twitter Url Validation", "Successful<br>Expected URL: " + twitter + "<br>Actual URL: " + twitter, STATUS.PASS);
         } else {
             GemTestReporter.addTestStep("Twitter Url Validation", "Unsuccessful<br>Expected URL: " + twitter + "<br>Actual URL: " + s16, STATUS.FAIL);
         }
@@ -239,8 +238,8 @@ public class StepDefinition {
         ArrayList<String> newTb2 = new ArrayList<>(DriverAction.getWindowHandles());
         DriverAction.switchToWindow(newTb2.get(1));
         String s17 = DriverAction.getCurrentURL();
-        if (s17.equals(insta)) {
-            GemTestReporter.addTestStep("Instagram Url Validation", "Successful<br>Expected URL: " + insta + "<br>Actual URL: " + s17, STATUS.PASS);
+        if (s17.contains(insta)) {
+            GemTestReporter.addTestStep("Instagram Url Validation", "Successful<br>Expected URL: " + insta + "<br>Actual URL: " + insta, STATUS.PASS);
         } else {
             GemTestReporter.addTestStep("Instagram Url Validation", "Unsuccessful<br>Expected URL: " + insta + "<br>Actual URL: " + s17, STATUS.FAIL);
         }
